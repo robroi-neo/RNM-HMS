@@ -9,13 +9,15 @@
     <title>Document</title>
 </head>
 
-<body class="">
-    <div>
+<body class="bg-white">
+    <div class="grid grid-cols-[16rem_1fr]">
         <!-- Side Nav -->
         <x-nav></x-nav>
-        
-        <h1>{{ $slot }}</h1>
+        <div>
+            {{ $slot }}
+        </div>
     </div>
+
 
 </body>
 

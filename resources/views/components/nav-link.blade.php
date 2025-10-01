@@ -3,7 +3,7 @@
 <a href="{{ $href }}"
     {{ $attributes->merge([
        'class' => 'px-4 py-2 rounded-md flex flex-row gap-2 items-center ' .
-                 ($active ? 'bg-black text-white' : 'bg-white text-black hover:bg-neutral-950 hover:text-white')
+                 ($active ? 'bg-neutral-950 text-white' : 'bg-white text-black hover:bg-neutral-500 hover:text-white')
    ]) }}>
 
     {{-- Icon slot (inject full SVG here) --}}
@@ -14,5 +14,5 @@
     @endif
 
     {{-- Text --}}
-    <span>{{ $slot }}</span>
+    <span class="self-baseline">{{ $slot }}</span>
 </a>
