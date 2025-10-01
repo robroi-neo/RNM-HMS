@@ -10,7 +10,8 @@
         </thead>
 
         <tbody>
-            <x-table-row></x-table-row>
+            {{-- <x-table-row :values="[$supplier->id, $supplier->name, $supplier->address]"></x-table-row> --}}
+            <x-table-row :values="['1', 'Robroi', 'Main Street']"></x-table-row>
         </tbody>
     </table>
 </div>

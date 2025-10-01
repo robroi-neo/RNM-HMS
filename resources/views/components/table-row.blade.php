@@ -1,5 +1,5 @@
 @props([
-    'values' => ['1', 'ABC Supplies', 'Main Street'],
+    'values' => [],
 ])
 
 <tr class="hover:bg-gray-50  border-neutral-200 border-b-1">
