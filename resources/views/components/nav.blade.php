@@ -19,11 +19,6 @@
                     <path d="M7.14293 0.714294H1.42864C1.03415 0.714294 0.714355 1.03409 0.714355 1.42858V10C0.714355 10.3945 1.03415 10.7143 1.42864 10.7143H7.14293C7.53742 10.7143 7.85721 10.3945 7.85721 10V1.42858C7.85721 1.03409 7.53742 0.714294 7.14293 0.714294Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M7.14293 14.9857H1.42864C1.03415 14.9857 0.714355 15.3055 0.714355 15.7V18.5714C0.714355 18.9659 1.03415 19.2857 1.42864 19.2857H7.14293C7.53742 19.2857 7.85721 18.9659 7.85721 18.5714V15.7C7.85721 15.3055 7.53742 14.9857 7.14293 14.9857Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
                 </g>
-                <defs>
-                    <clipPath id="clip0_368_29">
-                        <rect width="20" height="20" fill="white" />
-                    </clipPath>
-                </defs>
             </svg>
         </x-slot:icon>
         Dashboard
@@ -39,11 +34,6 @@
                     <path d="M4.28557 19.2857C4.68006 19.2857 4.99986 18.966 4.99986 18.5715C4.99986 18.177 4.68006 17.8572 4.28557 17.8572C3.89109 17.8572 3.57129 18.177 3.57129 18.5715C3.57129 18.966 3.89109 19.2857 4.28557 19.2857Z" fill="currentColor" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M13.5712 19.2857C13.9657 19.2857 14.2855 18.966 14.2855 18.5715C14.2855 18.177 13.9657 17.8572 13.5712 17.8572C13.1767 17.8572 12.8569 18.177 12.8569 18.5715C12.8569 18.966 13.1767 19.2857 13.5712 19.2857Z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </g>
-                <defs>
-                    <clipPath id="clip0_368_29">
-                        <rect width="20" height="20" fill="white" />
-                    </clipPath>
-                </defs>
             </svg>
         </x-slot:icon>
         POS
@@ -61,11 +51,6 @@
                     <path d="M6.42822 11.4286H13.5711" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M6.42822 15H13.5711" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
                 </g>
-                <defs>
-                    <clipPath id="clip0_368_29">
-                        <rect width="20" height="20" fill="g" />
-                    </clipPath>
-                </defs>
             </svg>
         </x-slot:icon>
         Purchasing
@@ -73,18 +58,8 @@
     <x-nav-link href="/inventory" :active="request()->is('inventory')">
         <x-slot:icon>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                fill="none" class="h-5 w-5 hover:text-white hover:border-white">
-                <g clip-path="url(#clip0_368_29)">
-                    <path d="M17.8572 0.714294H2.14293C1.35395 0.714294 0.714355 1.35389 0.714355 2.14287V17.8572C0.714355 18.6461 1.35395 19.2857 2.14293 19.2857H17.8572C18.6462 19.2857 19.2858 18.6461 19.2858 17.8572V2.14287C19.2858 1.35389 18.6462 0.714294 17.8572 0.714294Z" fill="#1E1E20" stroke="#1E1E20" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M13 0V8.18182C13 8.39881 12.921 8.60692 12.7803 8.76036C12.6397 8.9138 12.4489 9 12.25 9H7.75C7.55109 9 7.36032 8.9138 7.21967 8.76036C7.07902 8.60692 7 8.39881 7 8.18182V0" fill="white" />
-                    <path d="M13 0V8.18182C13 8.39881 12.921 8.60692 12.7803 8.76036C12.6397 8.9138 12.4489 9 12.25 9H7.75C7.55109 9 7.36032 8.9138 7.21967 8.76036C7.07902 8.60692 7 8.39881 7 8.18182V0" stroke="#F9FAFB" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M12.1431 15.7143H15.7145" stroke="#F9FAFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </g>
-                <defs>
-                    <clipPath id="clip0_368_29">
-                        <rect width="20" height="20" fill="white" />
-                    </clipPath>
-                </defs>
+                fill="none" class="h-5 w-5 hover:border-white">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4.6A2.6 2.6 0 0 1 2.6 2h18.8A2.6 2.6 0 0 1 24 4.6v.8A2.6 2.6 0 0 1 21.4 8H21v10.6c0 1.33-1.07 2.4-2.4 2.4H5.4C4.07 21 3 19.93 3 18.6V8h-.4A2.6 2.6 0 0 1 0 5.4v-.8ZM2.6 4a.6.6 0 0 0-.6.6v.8a.6.6 0 0 0 .6.6h18.8a.6.6 0 0 0 .6-.6v-.8a.6.6 0 0 0-.6-.6H2.6ZM8 10a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2H8Z" fill="currentColor" />
             </svg>
         </x-slot:icon>
         Inventory
@@ -100,11 +75,6 @@
                     <path d="M4.44434 3.88889L13.6554 1.13735C13.7465 1.1117 13.8417 1.10476 13.9355 1.11695C14.0293 1.12914 14.1196 1.16021 14.2011 1.20827C14.2825 1.25633 14.3534 1.3204 14.4094 1.3966C14.4654 1.4728 14.5053 1.55956 14.5269 1.65163L14.9269 3.25163" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M18.5714 10.7143H14.9999C14.6054 10.7143 14.2856 11.0341 14.2856 11.4286V13.5714C14.2856 13.9659 14.6054 14.2857 14.9999 14.2857H18.5714C18.9658 14.2857 19.2856 13.9659 19.2856 13.5714V11.4286C19.2856 11.0341 18.9658 10.7143 18.5714 10.7143Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
                 </g>
-                <defs>
-                    <clipPath id="clip0_368_29">
-                        <rect width="20" height="20" fill="white" />
-                    </clipPath>
-                </defs>
             </svg>
         </x-slot:icon>
         Supplier
@@ -117,11 +87,6 @@
                     <path d="M9.99979 10C12.564 10 14.6426 7.92133 14.6426 5.35715C14.6426 2.79297 12.564 0.714294 9.99979 0.714294C7.43561 0.714294 5.35693 2.79297 5.35693 5.35715C5.35693 7.92133 7.43561 10 9.99979 10Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M18.8285 19.2857C18.2288 17.4155 17.0506 15.7841 15.4639 14.6266C13.8772 13.4692 11.964 12.8455 9.99996 12.8455C8.03595 12.8455 6.12268 13.4692 4.53598 14.6266C2.94928 15.7841 1.77113 17.4155 1.17139 19.2857H18.8285Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
                 </g>
-                <defs>
-                    <clipPath id="clip0_368_29">
-                        <rect width="20" height="20" fill="white" />
-                    </clipPath>
-                </defs>
             </svg>
         </x-slot:icon>
         Users
