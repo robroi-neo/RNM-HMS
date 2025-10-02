@@ -3,6 +3,31 @@
 use Illuminate\Support\Facades\Route;
 
 $heading = "";
+
+$suppliers = [
+    [
+        'id' => '1',
+        'name' => 'Robroi Neo M. Dingal',
+        'address' => '012, Zapote St. General Santos City',
+    ],
+    [
+        'id' => '1',
+        'name' => 'Robroi Neo M. Dingal',
+        'address' => '012, Zapote St. General Santos City',
+    ],
+    [
+        'id' => '1',
+        'name' => 'Robroi Neo M. Dingal',
+        'address' => '012, Zapote St. General Santos City',
+    ],
+    [
+        'id' => '1',
+        'name' => 'Robroi Neo M. Dingal',
+        'address' => '012, Zapote St. General Santos City',
+    ],
+
+];
+
 Route::get('/', function () {
     $heading = "Dashboard";
     return view('dashboard', [
@@ -31,10 +56,11 @@ Route::get('/inventory', function () {
     ]);
 });
 
-Route::get('/supplier', function () {
+Route::get('/supplier', function () use ($suppliers) {
     $heading = "Supplier";
     return view('supplier', [
-        'heading' => $heading
+        'heading' => $heading,
+        'suppliers' => $suppliers
     ]);
 });
 

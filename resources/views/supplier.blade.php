@@ -16,7 +16,7 @@
                         </svg>
                     </span>
                     <input type="text" placeholder="Search suppliers..."
-                        class="w-full pl-10 pr-3 py-2 border border-neutral-400 rounded-sm text-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        class="w-full pl-10 pr-3 py-2 border border-neutral-400 rounded-sm text-xl focus:outline-none focus:ring-2 focus:ring-netural-950">
                 </div>
 
                 <!-- Sort button -->
@@ -42,10 +42,11 @@
                 </button>
             </div>
         </div>
-        <div class="">
+        <div>
             <!-- Table -->
-            <x-tables></x-tables>
-
+            <x-tables :suppliers=$suppliers></x-tables>
+            <!-- Pass Array Data to table -->
+            <!-- The -->
         </div>
     </div>
 

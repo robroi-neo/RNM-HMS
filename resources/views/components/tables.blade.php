@@ -1,5 +1,9 @@
+@props([
+    'suppliers' => [],
+])
+
 <div class="overflow-x-auto rounded-lg shadow">
-    <table class="min-w-full text-sm text-left ">
+    <table class="min-w-full text-sm text-left">
         <thead class="bg-gray-200 text-gray-500 text-xl">
             <tr>
                 <th class="px-4 py-4 w-65">Supplier ID</th>
@@ -10,15 +14,10 @@
         </thead>
 
         <tbody>
-            {{-- <x-table-row :values="[$supplier->id, $supplier->name, $supplier->address]"></x-table-row> --}}
-            <x-table-row :values="['1', 'Robroi Neo M. Dingal', 'Zapote St. General Santos City']"></x-table-row>
-            <x-table-row :values="['2', 'Robroi Neo M. Dingal', 'Zapote St. General Santos City']"></x-table-row>
-            <x-table-row :values="['3', 'Robroi Neo M. Dingal', 'Zapote St. General Santos City']"></x-table-row>
-            <x-table-row :values="['4', 'Robroi Neo M. Dingal', 'Zapote St. General Santos City']"></x-table-row>
-            <x-table-row :values="['5', 'Robroi Neo M. Dingal', 'Zapote St. General Santos City']"></x-table-row>
-            <x-table-row :values="['6', 'Robroi Neo M. Dingal', 'Zapote St. General Santos City']"></x-table-row>
-            <x-table-row :values="['7', 'Robroi Neo M. Dingal', 'Zapote St. General Santos City']"></x-table-row>
-            <x-table-row :values="['8', 'Robroi Neo M. Dingal', 'Zapote St. General Santos City']"></x-table-row>
+            @foreach ($suppliers as $supplier)
+                <x-table-row :values="[$supplier['id'], $supplier['name'], $supplier['address']]"></x-table-row>
+            @endforeach
+
         </tbody>
     </table>
 </div>

@@ -11,15 +11,13 @@
 </head>
 
 <body class="bg-white">
-    <div class="grid grid-cols-[16rem_1fr]">
+    <div class="grid grid-cols-[20rem_1fr]">
         <!-- Side Nav -->
         <x-nav></x-nav>
         <div>
             {{ $slot }}
         </div>
     </div>
-
-
 </body>
 
 </html>
