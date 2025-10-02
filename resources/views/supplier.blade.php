@@ -1,6 +1,6 @@
 <x-layout>
     <x-header :heading="$heading"></x-header>
-    <div class="grid grid-rows-[5rem_1fr] mx-5 mt-5">
+    <div class="grid grid-rows-[5rem_1fr] mx-8 mt-5">
         <div class="flex flex-col sm:flex-row justify-between items-center mb-4 gap-2">
 
             <!-- left side buttons -->
@@ -16,12 +16,12 @@
                         </svg>
                     </span>
                     <input type="text" placeholder="Search suppliers..."
-                        class="w-full pl-10 pr-3 py-1 border border-neutral-400 rounded-sm  focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        class="w-full pl-10 pr-3 py-2 border border-neutral-400 rounded-sm text-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
 
                 <!-- Sort button -->
                 <button
-                    class="flex items-center gap-2 px-3 py-1 text-sm text-neutral-600 font-medium bg-white border border-neutral-800 rounded-sm hover:bg-gray-300">
+                    class="flex items-center justify-center gap-2 px-3 py-2 text-xl text-neutral-600 font-medium  bg-white border border-neutral-800 rounded-sm hover:bg-gray-300">
                     <!-- Sort Icon (Up & Down) -->
                     <svg class="h-4 w-4 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
@@ -37,12 +37,12 @@
             <!-- Right-side buttons -->
             <div class="flex gap-2">
                 <!-- Create Supplier -->
-                <button class="px-3 py-2 text-sm bg-neutral-900 text-white rounded-md hover:bg-neutral-600">
+                <button class="px-4 py-3 text-xl bg-neutral-900 text-white rounded-md hover:bg-neutral-600">
                     Create Supplier
                 </button>
             </div>
         </div>
-        <div>
+        <div class="">
             <!-- Table -->
             <x-tables></x-tables>
 
