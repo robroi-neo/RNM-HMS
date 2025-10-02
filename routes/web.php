@@ -34,6 +34,7 @@ Route::get('/inventory', function () {
 
 Route::get('/supplier', function () {
     $heading = "Supplier";
+    
     return view('supplier', [
         'heading' => $heading,
         'suppliers' => Supplier::all()
