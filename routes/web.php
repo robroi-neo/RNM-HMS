@@ -1,32 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Supplier;
 
-$heading = "";
-
-$suppliers = [
-    [
-        'id' => '1',
-        'name' => 'Robroi Neo M. Dingal',
-        'address' => '012, Zapote St. General Santos City',
-    ],
-    [
-        'id' => '1',
-        'name' => 'Robroi Neo M. Dingal',
-        'address' => '012, Zapote St. General Santos City',
-    ],
-    [
-        'id' => '1',
-        'name' => 'Robroi Neo M. Dingal',
-        'address' => '012, Zapote St. General Santos City',
-    ],
-    [
-        'id' => '1',
-        'name' => 'Robroi Neo M. Dingal',
-        'address' => '012, Zapote St. General Santos City',
-    ],
-
-];
 
 Route::get('/', function () {
     $heading = "Dashboard";
@@ -56,11 +32,11 @@ Route::get('/inventory', function () {
     ]);
 });
 
-Route::get('/supplier', function () use ($suppliers) {
+Route::get('/supplier', function () {
     $heading = "Supplier";
     return view('supplier', [
         'heading' => $heading,
-        'suppliers' => $suppliers
+        'suppliers' => Supplier::all()
     ]);
 });
 
