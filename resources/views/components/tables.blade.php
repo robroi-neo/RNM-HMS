@@ -9,8 +9,8 @@
                 <th class="px-4 py-4 w-40">Supplier ID</th>
                 <th class="px-4 py-4">Company Name</th>
                 <th class="px-4 py-4">Contact Person</th>
-                <th class="px-4 py-4">Contact</th>
-                <th class="px-4 py-4 text-center">Action Button</th>
+                <th class="px-4 py-4">Contact Number</th>
+                <th class="px-4 py-4 text-center"></th>
             </tr>
         </thead>
 
@@ -27,6 +27,6 @@
         </tbody>
     </table>
 </div>
-<div class="my-5 bg-white text-gray-800">
+<div class="mt-3">
     {{ $suppliers->onEachSide(1)->links() }}
 </div>

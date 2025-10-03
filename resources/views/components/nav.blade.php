@@ -1,4 +1,4 @@
-<aside class="h-screen bg-white text-black border-r-1 border-neutral-200 shadow-sm flex flex-col p-4 space-y-4">
+<aside class="h-full bg-white text-black border-r-1 border-neutral-200 shadow-sm flex flex-col p-4 space-y-4">
     <!-- Logo + Title -->
     <a href="/" class="flex items-center space-x-3 p-2 rounded-lg mb-20">
         <img src="{{ asset('img/logo.svg') }}" alt="logo" class="w-10 h-10">

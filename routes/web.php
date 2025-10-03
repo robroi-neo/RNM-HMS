@@ -33,7 +33,7 @@ Route::get('/inventory', function () {
 });
 
 Route::get('/supplier', function () {
-    $heading = "Supplier";
+    $heading = "Supplier Records";
     
     return view('supplier', [
         'heading' => $heading,
