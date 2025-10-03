@@ -27,3 +27,6 @@
         </tbody>
     </table>
 </div>
+<div class="my-5 bg-white text-gray-800">
+    {{ $suppliers->onEachSide(1)->links() }}
+</div>

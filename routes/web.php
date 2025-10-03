@@ -37,7 +37,7 @@ Route::get('/supplier', function () {
     
     return view('supplier', [
         'heading' => $heading,
-        'suppliers' => Supplier::all()
+        'suppliers' => Supplier::paginate(8)
     ]);
 });
 

@@ -7,6 +7,7 @@
     <td class="px-4 py-3 text-lg truncate max-w-xs">{{ $value }}</td>
 @else
     <td class="flex flex-row px-4 py-4 text-center justify-center space-x-3">
+        <!-- Delete icon -->
         <a class="text-center">
             <svg class="w-6 h-6 text-neutral-500 hover:text-neutral-900" viewBox="0 0 25 25" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -25,6 +26,7 @@
                     stroke-linejoin="round" />
             </svg>
         </a>
+        <!-- Edit Icon -->
         <a class="text-center">
             <svg class="w-6 h-6 text-neutral-500 hover:text-neutral-900" viewBox="0 0 25 25" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
