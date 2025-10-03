@@ -4,7 +4,7 @@
 ])
 
 @if ($type === 'data')
-    <td class="px-4 py-4 text-xl">{{ $value }}</td>
+    <td class="px-4 py-3 text-lg truncate max-w-xs">{{ $value }}</td>
 @else
     <td class="flex flex-row px-4 py-4 text-center justify-center space-x-3">
         <a class="text-center">
