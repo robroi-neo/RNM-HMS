@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Supplier;
+
+use App\Http\Controllers\SupplierController;
 
 
 Route::get('/', function () {
@@ -32,14 +33,11 @@ Route::get('/inventory', function () {
     ]);
 });
 
-Route::get('/supplier', function () {
-    $heading = "Supplier Records";
-    
-    return view('supplier.index', [
-        'heading' => $heading,
-        'suppliers' => Supplier::paginate(8)
-    ]);
-});
+
+Route::get('/supplier', [SupplierController::class, 'index'])->name('supplier.index');
+
+Route::post('/supplier', [SupplierController::class, 'store'])->name('supplier.store');
+
 
 Route::get('/users', function () {
     $heading = "Users";
