@@ -17,7 +17,7 @@
         <tbody>
             @if (count($suppliers) === 0)
                 <tr>
-                    <td colspan="5" class="px-4 py-4 text-center text-gray-600 bg-gray-100 ">
+                    <td colspan="5" class="px-4 py-4 text-center text-gray-700 bg-gray-100 ">
                         No data available in table
                     </td>
                 </tr>

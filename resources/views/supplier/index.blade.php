@@ -37,7 +37,8 @@
             <!-- Right-side buttons -->
             <div class="flex gap-2">
                 <!-- Create Supplier -->
-                <button class="px-3 py-2 bg-neutral-900 text-white rounded-md hover:bg-neutral-600">
+                <button onclick="toggleModal(true)"
+                    class="px-3 py-2 bg-neutral-900 text-white rounded-md hover:bg-neutral-600">
                     Create Supplier
                 </button>
             </div>
@@ -48,3 +49,56 @@
     </div>
 
 </x-layout>
+
+<!-- Modal -->
+<div id="createSupplier" class="hidden fixed inset-0 flex items-center justify-center z-50">
+
+    <!-- backdrop -->
+    <div onclick="toggleModal(false)" class="absolute inset-0 bg-gray-500/75"></div>
+
+    <!-- popup -->
+    <form class="relative bg-white p-6 rounded-2xl shadow-lg w-96 space-y-3 z-10">
+        <h2 class="text-xl font-semibold text-center mb-4">Add Supplier</h2>
+
+        <div class="flex flex-col">
+            <label class="text-sm font-medium text-gray-700">Supplier ID</label>
+            <input type="text" class="border border-gray-300 rounded-md p-2">
+        </div>
+
+        <div class="flex flex-col">
+            <label class="text-sm font-medium text-gray-700">Supplier Name</label>
+            <input type="text" class="border border-gray-300 rounded-md p-2">
+        </div>
+
+        <div class="flex flex-col">
+            <label class="text-sm font-medium text-gray-700">Supplier Address</label>
+            <input type="text" class="border border-gray-300 rounded-md p-2">
+        </div>
+
+        <div class="flex flex-col">
+            <label class="text-sm font-medium text-gray-700">Contact Person</label>
+            <input type="text" class="border border-gray-300 rounded-md p-2">
+        </div>
+
+        <div class="flex flex-col">
+            <label class="text-sm font-medium text-gray-700">Contact Number</label>
+            <input type="text" class="border border-gray-300 rounded-md p-2">
+        </div>
+
+        <div class="flex justify-end space-x-3 mt-4">
+            <button type="button" onclick="toggleModal(false)"
+                class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400">
+                Cancel
+            </button>
+            <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">
+                Save
+            </button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function toggleModal(show) {
+        document.getElementById("createSupplier").classList.toggle("hidden", !show);
+    }
+</script>

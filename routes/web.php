@@ -35,7 +35,7 @@ Route::get('/inventory', function () {
 Route::get('/supplier', function () {
     $heading = "Supplier Records";
     
-    return view('supplier', [
+    return view('supplier.index', [
         'heading' => $heading,
         'suppliers' => Supplier::paginate(8)
     ]);
