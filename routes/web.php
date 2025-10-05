@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\SupplierController;
-
+use App\Models\Supplier;
 
 Route::get('/', function () {
     $heading = "Dashboard";
@@ -38,6 +38,8 @@ Route::get('/inventory', function () {
 Route::get('/supplier', [SupplierController::class, 'index'])->name('supplier.index');
 
 Route::post('/supplier', [SupplierController::class, 'store'])->name('supplier.store');
+
+Route::delete('/supplier', [SupplierController::class, 'delete'])->name('supplier.delete');
 
 Route::get('/users', function () {
     $heading = "Users";

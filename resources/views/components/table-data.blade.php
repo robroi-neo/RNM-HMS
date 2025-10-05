@@ -10,7 +10,7 @@
 @else
     <td class="flex flex-row px-10 py-4 text-center justify-end space-x-3">
         <!-- Delete icon -->
-        <a class="text-center px-1 py-0.5" onclick="event.stopPropagation();">
+        <a class="text-center px-1 py-0.5" onclick="event.stopPropagation(); deleteRow({{ $value }});">
             <svg class="w-6 h-6
             text-neutral-500 hover:text-neutral-900" viewBox="0 0 25 25" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -44,3 +44,34 @@
         </a>
     </td>
 @endif
+
+<script>
+    async function deleteRow(id) {
+        if (!confirm('Are you sure you want to delete this supplier?')) return;
+
+        try {
+            const response = await fetch("{{ route('supplier.delete') }}", {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRF-TOKEN": "{{ csrf_token() }}",
+                },
+                body: JSON.stringify({
+                    id: id
+                }),
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                alert('Supplier deleted successfully!');
+                // Optionally, remove the row from the table:
+                window.location.reload();
+            } else {
+                alert(data.error || 'Failed to delete supplier');
+            }
+        } catch (error) {
+            console.error('Error deleting supplier:', error);
+        }
+    }
+</script>

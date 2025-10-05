@@ -8,5 +8,5 @@
     <x-table-data type="data" :value="$values['company_name']"></x-table-data>
     <x-table-data type="data" :value="$values['address']"></x-table-data>
 
-    <x-table-data type="action_btns"></x-table-data>
+    <x-table-data type="action_btns" :value="$values['id']"></x-table-data>
 </tr>

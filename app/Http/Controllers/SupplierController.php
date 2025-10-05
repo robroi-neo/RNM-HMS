@@ -29,4 +29,18 @@ class SupplierController extends Controller
 
         return redirect('/supplier')->with('success', 'Supplier created!');
     }
+    public function delete(Request $request)
+    {
+        $id = $request->input('id');
+        $supplier = Supplier::find($id);
+
+        if (!$supplier) {
+            return response()->json(['error' => 'Supplier not found'], 404);
+        }
+
+        $supplier->delete();
+
+        return response()->json(['success' => true]);
+
+    }
 }

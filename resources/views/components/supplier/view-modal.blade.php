@@ -22,8 +22,6 @@
 
 <script>
     function showSupplierDetails(row, values) {
-        console.log(values); // ← this will now be a real JS object
-
         // Populate modal fields
         document.getElementById('modalId').textContent = values.id;
         document.getElementById('modalName').textContent = values.company_name;
