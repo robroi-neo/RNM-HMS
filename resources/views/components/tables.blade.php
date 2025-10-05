@@ -25,9 +25,9 @@
             @foreach ($suppliers as $supplier)
                 <x-table-row :values="[
                     $supplier['id'],
-                    $supplier['CompanyName'],
-                    $supplier['ContactPerson'],
-                    $supplier['ContactNumber'],
+                    $supplier['company_name'],
+                    $supplier['contact_person'],
+                    $supplier['contact_number'],
                 ]"></x-table-row>
             @endforeach
 

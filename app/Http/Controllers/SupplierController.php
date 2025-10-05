@@ -11,7 +11,7 @@ class SupplierController extends Controller
     {
         return view('supplier.index', [
             'heading' => 'Supplier Records',
-            'suppliers' => Supplier::paginate(8),
+            'suppliers' => Supplier::orderBy('id', 'desc')->paginate(8),
         ]);
     }
     public function store(Request $request)
@@ -19,14 +19,13 @@ class SupplierController extends Controller
         
         // Validate
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
+            'company_name' => 'required|string|max:255',
             'address' => 'required|string|max:255',
             'contact_person' => 'required|string|max:255',
             'contact_number' => 'required|string|max:20',
         ]);
-        dd($validated);
         // Save to DB later
-        // Supplier::create($validated);
+        Supplier::create($validated);
 
         return redirect('/supplier')->with('success', 'Supplier created!');
     }

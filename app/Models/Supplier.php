@@ -10,7 +10,8 @@ use Illuminate\Support\Arr;
 class Supplier extends Model
 {
     use HasFactory;
-    protected $fillable = ['CompanyName', 'CompanyAddress','ContactNumber', 'ContactPerson'];
+    protected $fillable = ['company_name', 'address','contact_number', 'contact_person'];
     public $timestamps = false;
+
 }
 
