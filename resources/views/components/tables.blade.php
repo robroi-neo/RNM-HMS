@@ -6,11 +6,10 @@
     <table class="min-w-full text-lg text-left">
         <thead class="bg-gray-200 text-gray-700">
             <tr>
-                <th class="px-4 py-4 w-40">Supplier ID</th>
-                <th class="px-4 py-4">Company Name</th>
-                <th class="px-4 py-4">Contact Person</th>
-                <th class="px-4 py-4">Contact Number</th>
-                <th class="px-4 py-4 text-center">Action Button</th>
+                <th class="px-4 py-4 w-60">Supplier ID</th>
+                <th class="px-4 py-4 w-90">Company Name</th>
+                <th class="px-4 py-4 w-90">Address</th>
+                <th class="px-4 py-4 text-center justify-end"></th>
             </tr>
         </thead>
 
@@ -23,12 +22,7 @@
                 </tr>
             @endif
             @foreach ($suppliers as $supplier)
-                <x-table-row :values="[
-                    $supplier['id'],
-                    $supplier['company_name'],
-                    $supplier['contact_person'],
-                    $supplier['contact_number'],
-                ]"></x-table-row>
+                <x-table-row :values="$supplier"></x-table-row>
             @endforeach
 
         </tbody>

@@ -50,5 +50,5 @@
 
 </x-layout>
 
-<x-supplier.create-modal>
-</x-supplier.create-modal>
+<x-supplier.create-modal></x-supplier.create-modal>
+<x-supplier.view-modal></x-supplier.view-modal>

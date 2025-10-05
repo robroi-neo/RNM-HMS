@@ -34,10 +34,10 @@ Route::get('/inventory', function () {
 });
 
 
+
 Route::get('/supplier', [SupplierController::class, 'index'])->name('supplier.index');
 
 Route::post('/supplier', [SupplierController::class, 'store'])->name('supplier.store');
-
 
 Route::get('/users', function () {
     $heading = "Users";
