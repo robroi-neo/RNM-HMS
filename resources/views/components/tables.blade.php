@@ -8,7 +8,7 @@
             <tr>
                 <th class="px-4 py-4 w-60">Supplier ID</th>
                 <th class="px-4 py-4 w-90">Company Name</th>
-                <th class="px-4 py-4 w-90">Address</th>
+                <th class="px-4 py-4 w-90">Contact Person</th>
                 <th class="px-4 py-4 text-center justify-end"></th>
             </tr>
         </thead>
@@ -27,7 +27,7 @@
                     onclick='showSupplierDetails(this, @json($value))'>
                     <x-table-data type="data" :value="$value->id"></x-table-data>
                     <x-table-data type="data" :value="$value->company_name"></x-table-data>
-                    <x-table-data type="data" :value="$value->address"></x-table-data>
+                    <x-table-data type="data" :value="$value->contact_person"></x-table-data>
 
                     <!-- Action buttons -->
                     <td class="flex flex-row px-10 py-4 text-center justify-end space-x-3">

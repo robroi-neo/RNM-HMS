@@ -14,34 +14,34 @@
 
         <!-- Supplier ID (read-only) -->
         <div class="grid grid-cols-2 gap-1 items-center">
-            <label class="font-semibold text-neutral-700">Supplier ID:</label>
+            <label class="font-semibold text-gray-700">Supplier ID:</label>
             <input id="id" name="id" type="text" readonly class="p-2 bg-white text-neutral-700" />
         </div>
 
         <!-- edit Name -->
         <div class="grid grid-cols-2 gap-1 items-center">
-            <label class="font-semibold text-neutral-700">Supplier name:</label>
+            <label class="font-semibold text-gray-700">Supplier name:</label>
             <input id="edit_name" name="company_name" type="text"
                 class="border border-neutral-300 rounded-md p-2 focus:ring-2 focus:ring-neutral-500 focus:outline-none" />
         </div>
 
         <!-- edit Address -->
         <div class="grid grid-cols-2 gap-1 items-center">
-            <label class="font-semibold text-neutral-700">Supplier Address:</label>
+            <label class="font-semibold text-gray-700">Supplier Address:</label>
             <input id="edit_address" name="address" type="text"
                 class="border border-neutral-300 rounded-md p-2 focus:ring-2 focus:ring-neutral-500 focus:outline-none" />
         </div>
 
         <!-- edit Contact Person -->
         <div class="grid grid-cols-2 gap-1 items-center">
-            <label class="font-semibold text-neutral-700">Contact Person:</label>
+            <label class="font-semibold text-gray-700">Contact Person:</label>
             <input id="edit_person" name="contact_person" type="text"
                 class="border border-neutral-300 rounded-md p-2 focus:ring-2 focus:ring-neutral-500 focus:outline-none" />
         </div>
 
         <!-- edit Contact Number-->
         <div class="grid grid-cols-2 gap-1 items-center">
-            <label class="font-semibold text-neutral-700">Contact Number:</label>
+            <label class="font-semibold text-gray-700">Contact Number:</label>
             <input id="edit_contact" name="contact_number" type="text"
                 class="border border-neutral-300 rounded-md p-2 focus:ring-2 focus:ring-neutral-500 focus:outline-none" />
         </div>

@@ -5,36 +5,40 @@
     <x-supplier.edit-modal></x-supplier.edit-modal>
 
     <div class="grid grid-rows-[5rem_1fr] mx-8 mt-4 text-lg">
-        <div class="flex flex-col sm:flex-row justify-between items-center mb-4 gap-2">
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-2 gap-2">
 
             <!-- left side buttons -->
-            <div class="w-full sm:w-1/3 flex flex-row gap-2">
-                <!-- Search with icon -->
-                <div class="relative">
-                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <!-- Heroicons: Magnifying Glass -->
-                        <svg class="h-5 w-5 text-neutral-400" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
-                        </svg>
-                    </span>
-                    <input type="text" placeholder="Search suppliers..."
-                        class="pl-10 pr-2 py-2 border border-neutral-400 rounded-sm focus:outline-none focus:ring-2 focus:ring-netural-950">
-                </div>
+            <div class="w-full sm:w-1/2 flex items-center">
+                <form method="GET" action="{{ route('supplier.index') }}" class="flex w-9/10 items-center space-x-2">
+                    <div class="relative flex-grow">
+                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-neutral-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+                            </svg>
+                        </span>
+                        <input type="text" name="search" placeholder="Search suppliers..."
+                            value="{{ request('search') }}"
+                            class="pl-10 pr-2 py-2 border border-neutral-400 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-900 w-full">
+                    </div>
+                    <button type="submit"
+                        class="px-4 py-2 bg-neutral-900 text-white rounded-md hover:bg-neutral-700 whitespace-nowrap">
+                        Search
+                    </button>
+                </form>
 
-                <!-- Sort button -->
-                <button
-                    class="flex items-center justify-center gap-2 px-3 py-2 text-neutral-600 font-medium  bg-white border border-neutral-800 rounded-sm hover:bg-gray-300">
-                    <!-- Sort Icon (Up & Down) -->
-                    <svg class="h-4 w-4 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                <!-- sort
+                <button type="button"
+                    class="px-3 py-2 border border-neutral-800 text-neutral-700 rounded-md hover:bg-neutral-200 whitespace-nowrap"><svg
+                        class="h-4 w-4 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M8 7l4-4 4 4M16 17l-4 4-4-4" />
                     </svg>
                     Sort
                 </button>
-
+            -->
 
             </div>
 
@@ -47,9 +51,6 @@
                 </button>
             </div>
         </div>
-        <div>
-            <x-tables :values=$suppliers></x-tables>
-        </div>
+        <x-tables :values=$suppliers></x-tables>
     </div>
-
 </x-layout>

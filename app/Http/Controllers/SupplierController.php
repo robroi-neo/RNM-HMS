@@ -7,13 +7,33 @@ use Illuminate\Http\Request;
 
 class SupplierController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        // Get search term from query string (?search=...)
+        $search = $request->input('search');
+
+        // Build query
+        $suppliers = Supplier::query()
+            ->when($search, function ($query, $search) {
+                $lowerSearch = strtolower($search);
+
+                $query->whereRaw('LOWER(company_name) LIKE ?', ["%{$lowerSearch}%"])
+                    ->orWhereRaw('LOWER(contact_person) LIKE ?', ["%{$lowerSearch}%"]);
+            })
+
+            ->orderBy('id', 'desc')
+            ->paginate(8);
+
+        // Keep the search term in pagination links
+        $suppliers->appends(['search' => $search]);
+
+        // Return view
         return view('supplier.index', [
             'heading' => 'Supplier Records',
-            'suppliers' => Supplier::orderBy('id', 'desc')->paginate(8),
+            'suppliers' => $suppliers,
         ]);
     }
+
     public function store(Request $request)
     {
         

@@ -3,27 +3,27 @@
     <!-- Backdrop -->
     <div onclick="toggleSupplierDetails(false)" class="absolute inset-0 bg-gray-500/75"></div>
     <!-- Popup Box -->
-    <div class="relative bg-white p-6 rounded-2xl shadow-lg z-10 space-y-2 w-125 h-90">
+    <div class="relative bg-white p-6 rounded-2xl shadow-lg z-10 w-125 h-90">
         <h2 class="text-xl font-semibold mb-6 text-center">Supplier Details</h2>
-        <div class="space-y-2 text-lg">
+        <div class="space-y-4">
             <div class="grid grid-cols-2 gap-1">
-                <p class="font-semibold text-neutral-800">Supplier ID:</p>
+                <p class="font-semibold text-gray-700">Supplier ID:</p>
                 <p id="modalId" class="text-left text-neutral-800"></p>
             </div>
             <div class="grid grid-cols-2 gap-1">
-                <p class="font-semibold text-neutral-800">Supplier Name:</p>
+                <p class="font-semibold text-gray-700">Supplier Name:</p>
                 <p id="modalName" class="text-left text-neutral-800"></p>
             </div>
             <div class="grid grid-cols-2 gap-1">
-                <p class="font-semibold text-neutral-800">Supplier Address:</p>
+                <p class="font-semibold text-gray-700">Supplier Address:</p>
                 <p id="modalAddress" class="text-left text-neutral-800"></p>
             </div>
             <div class="grid grid-cols-2 gap-1">
-                <p class="font-semibold text-neutral-800">Contact Person:</p>
+                <p class="font-semibold text-gray-700">Contact Person:</p>
                 <p id="modalPerson" class="text-left text-neutral-800"></p>
             </div>
             <div class="grid grid-cols-2 gap-1">
-                <p class="font-semibold text-neutral-800">Contact Number:</p>
+                <p class="font-semibold text-gray-700">Contact Number:</p>
                 <p id="modalNumber" class="text-left text-neutral-800"></p>
             </div>
         </div>
