@@ -4,7 +4,7 @@
     <div onclick="toggleSupplierDetails(false)" class="absolute inset-0 bg-gray-500/75"></div>
     <!-- Popup Box -->
     <div class="relative bg-white p-6 rounded-2xl shadow-lg w-112 z-10 space-y-2">
-        <h2 class="text-xl font-semibold mb-2">Supplier Details</h2>
+        <h2 class="text-xl font-semibold mb-2 text-center">Supplier Details</h2>
         <div class="space-y-2 text-lg">
             <div class="grid grid-cols-2 gap-1">
                 <p class="font-semibold text-gray-700">Supplier ID:</p>

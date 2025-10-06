@@ -40,6 +40,8 @@ Route::post('/supplier', [SupplierController::class, 'store'])->name('supplier.s
 
 Route::delete('/supplier', [SupplierController::class, 'delete'])->name('supplier.delete');
 
+Route::patch('/supplier/{id}', [SupplierController::class, 'patch'])->name('supplier.edit');
+
 Route::get('/users', function () {
     $heading = "Users";
     return view('users', [

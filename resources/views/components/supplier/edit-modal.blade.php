@@ -5,10 +5,12 @@
 
     <!-- Popup Form -->
     <!-- add edit action later -->
-    <form id="editSupplierForm" method="POST" class="relative bg-white p-6 rounded-2xl shadow-lg z-10 space-y-4">
+    <form method="POST" id="editSupplierForm" class="relative bg-white p-6 rounded-2xl shadow-lg z-10 space-y-4"
+        action=""> {{-- empty on render --}}
         @csrf
-        @method('PUT')
+        @method('PATCH')
 
+        <input id="id" name="id" type="hidden" />
         <h2 class="text-xl font-semibold mb-4 text-center">Edit Supplier Details</h2>
 
         <!-- Supplier ID (read-only) -->
@@ -21,7 +23,7 @@
         <!-- edit Name -->
         <div class="grid grid-cols-2 gap-1 items-center">
             <label class="font-semibold text-gray-700">Supplier name:</label>
-            <input id="edit_name" name="address" type="text"
+            <input id="edit_name" name="company_name" type="text"
                 class="border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-neutral-500 focus:outline-none" />
         </div>
 
@@ -35,14 +37,14 @@
         <!-- edit Contact Person -->
         <div class="grid grid-cols-2 gap-1 items-center">
             <label class="font-semibold text-gray-700">Contact Person:</label>
-            <input id="edit_person" name="address" type="text"
+            <input id="edit_person" name="contact_person" type="text"
                 class="border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-neutral-500 focus:outline-none" />
         </div>
 
         <!-- edit Contact Number-->
         <div class="grid grid-cols-2 gap-1 items-center">
             <label class="font-semibold text-gray-700">Contact Number:</label>
-            <input id="edit_contact" name="address" type="text"
+            <input id="edit_contact" name="contact_number" type="text"
                 class="border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-neutral-500 focus:outline-none" />
         </div>
 
@@ -60,15 +62,20 @@
 </div>
 
 
+
 <script>
-    async function editRow(values) {
-        console.log(values)
-        // Fill modal fields with existing supplier data
+    // base URL to append id to:
+    const supplierBaseUrl = "{{ url('/supplier') }}"; // -> "/supplier"
+
+    function editRow(values) {
         document.getElementById('id').value = values.id;
-        document.getElementById('edit_name').value = values.company_name;
-        document.getElementById('edit_address').value = values.address;
-        document.getElementById('edit_person').value = values.contact_person;
-        document.getElementById('edit_contact').value = values.contact_number;
+        document.getElementById('edit_name').value = values.company_name ?? '';
+        document.getElementById('edit_address').value = values.address ?? '';
+        document.getElementById('edit_person').value = values.contact_person ?? '';
+        document.getElementById('edit_contact').value = values.contact_number ?? '';
+
+        // set the form action to /supplier/{id}
+        document.getElementById('editSupplierForm').action = supplierBaseUrl + '/' + values.id;
 
         toggleEditModal(true);
     }

@@ -9,7 +9,7 @@
         class="relative bg-white p-6 rounded-2xl shadow-lg w-112 space-y-3 z-10">
         @csrf
 
-        <div class="flex align-baseline">
+        <div class="flex">
             <h2 class="text-xl font-semibold text-center mb-4">Create Supplier</h2>
         </div>
 
