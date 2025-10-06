@@ -1,5 +1,9 @@
 <x-layout>
     <x-header :heading="$heading"></x-header>
+    <x-supplier.create-modal></x-supplier.create-modal>
+    <x-supplier.view-modal></x-supplier.view-modal>
+    <x-supplier.edit-modal></x-supplier.edit-modal>
+
     <div class="grid grid-rows-[5rem_1fr] mx-8 mt-4 text-lg">
         <div class="flex flex-col sm:flex-row justify-between items-center mb-4 gap-2">
 
@@ -49,8 +53,3 @@
     </div>
 
 </x-layout>
-
-<x-supplier.create-modal></x-supplier.create-modal>
-<x-supplier.view-modal></x-supplier.view-modal>
-
-<x-supplier.edit-modal></x-supplier.edit-modal>
