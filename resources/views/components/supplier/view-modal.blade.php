@@ -43,7 +43,7 @@
         // Populate modal fields
         console.log(values)
         document.getElementById('modalId').textContent = values.id;
-        document.getElementById('modalName').textContent = values.company_name;
+        document.getElementById('modalName').textContent = values.supplier_name;
         document.getElementById('modalAddress').textContent = values.address;
         document.getElementById('modalPerson').textContent = values.contact_person;
         document.getElementById('modalNumber').textContent = values.contact_number;

@@ -17,7 +17,7 @@ class SupplierController extends Controller
             ->when($search, function ($query, $search) {
                 $lowerSearch = strtolower($search);
 
-                $query->whereRaw('LOWER(company_name) LIKE ?', ["%{$lowerSearch}%"])
+                $query->whereRaw('LOWER(supplier_name) LIKE ?', ["%{$lowerSearch}%"])
                     ->orWhereRaw('LOWER(contact_person) LIKE ?', ["%{$lowerSearch}%"]);
             })
 
@@ -39,7 +39,7 @@ class SupplierController extends Controller
         
         // Validate
         $validated = $request->validate([
-            'company_name' => 'required|string|max:255',
+            'supplier_name' => 'required|string|max:255',
             'address' => 'required|string|max:255',
             'contact_person' => 'required|string|max:255',
             'contact_number' => 'required|string|max:20',
@@ -67,7 +67,7 @@ class SupplierController extends Controller
     {
         // validate
         $validated = $request->validate([
-            'company_name' => 'required|string|max:255',
+            'supplier_name' => 'required|string|max:255',
             'address' => 'required|string|max:255',
             'contact_person' => 'required|string|max:255',
             'contact_number' => 'required|string|max:20',
@@ -76,7 +76,7 @@ class SupplierController extends Controller
         // update supplier
         $supplier = Supplier::findOrFail($id);
         $supplier->update([
-            "company_name" => request('company_name'),
+            "supplier_name" => request('supplier_name'),
             "address" => request('address'),
             "contact_person" => request('contact_person'),
             "contact_number" => \request('contact_number'),

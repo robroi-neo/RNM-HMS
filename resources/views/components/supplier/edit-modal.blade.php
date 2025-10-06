@@ -21,7 +21,7 @@
         <!-- edit Name -->
         <div class="grid grid-cols-2 gap-1 items-center">
             <label class="font-semibold text-gray-700">Supplier name:</label>
-            <input id="edit_name" name="company_name" type="text"
+            <input id="edit_name" name="supplier_name" type="text"
                 class="border border-neutral-300 rounded-md p-2 focus:ring-2 focus:ring-neutral-500 focus:outline-none" />
         </div>
 
@@ -70,7 +70,7 @@
     function editRow(values) {
         console.log(values.id);
         document.getElementById('id').value = values.id;
-        document.getElementById('edit_name').value = values.company_name ?? '';
+        document.getElementById('edit_name').value = values.supplier_name ?? '';
         document.getElementById('edit_address').value = values.address ?? '';
         document.getElementById('edit_person').value = values.contact_person ?? '';
         document.getElementById('edit_contact').value = values.contact_number ?? '';

@@ -15,7 +15,7 @@
 
         <div class="flex flex-col">
             <label class="text-sm font-semibold text-gray-700">Supplier Name</label>
-            <input name="company_name" type="text" class="border border-gray-300 rounded-md p-2" required>
+            <input name="supplier_name" type="text" class="border border-gray-300 rounded-md p-2" required>
         </div>
 
         <div class="flex flex-col">
