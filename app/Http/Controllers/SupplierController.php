@@ -9,30 +9,47 @@ class SupplierController extends Controller
 {
     public function index(Request $request)
     {
-        // Get search term from query string (?search=...)
+        // Get query params
         $search = $request->input('search');
+        $sort = $request->input('sort', 'id_desc'); // default sorting
 
         // Build query
         $suppliers = Supplier::query()
             ->when($search, function ($query, $search) {
                 $lowerSearch = strtolower($search);
-
                 $query->whereRaw('LOWER(supplier_name) LIKE ?', ["%{$lowerSearch}%"])
-                    ->orWhereRaw('LOWER(contact_person) LIKE ?', ["%{$lowerSearch}%"]);
-            })
+                    ->orWhereRaw('LOWER(contact_person) LIKE ?', ["%{$lowerSearch}%"])
+                    ->orWhereRaw('LOWER(address) LIKE ?', ["%{$lowerSearch}%"]);
+            });
 
-            ->orderBy('id', 'desc')
-            ->paginate(8);
+        // Apply sorting
+        switch ($sort) {
+            case 'id_asc':
+                $suppliers->orderBy('id', 'asc');
+                break;
+            case 'company_asc':
+                $suppliers->orderBy('supplier_name', 'asc');
+                break;
+            case 'company_desc':
+                $suppliers->orderBy('supplier_name', 'desc');
+                break;
+            default: // 'id_desc'
+                $suppliers->orderBy('id', 'desc');
+                break;
+        }
 
-        // Keep the search term in pagination links
-        $suppliers->appends(['search' => $search]);
+        // Paginate and preserve query params
+        $suppliers = $suppliers->paginate(8)->appends([
+            'search' => $search,
+            'sort' => $sort,
+        ]);
 
-        // Return view
         return view('supplier.index', [
             'heading' => 'Supplier Records',
             'suppliers' => $suppliers,
         ]);
     }
+
 
     public function store(Request $request)
     {

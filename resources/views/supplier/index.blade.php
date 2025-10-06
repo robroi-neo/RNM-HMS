@@ -8,7 +8,7 @@
         <div class="flex flex-col sm:flex-row justify-between items-center mb-2 gap-2">
 
             <!-- left side buttons -->
-            <div class="w-full sm:w-1/2 flex items-center">
+            <div class="w-full sm:w-2/3 flex items-center">
                 <form method="GET" action="{{ route('supplier.index') }}" class="flex w-9/10 items-center space-x-2">
                     <div class="relative flex-grow">
                         <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -23,22 +23,26 @@
                             class="pl-10 pr-2 py-2 border border-neutral-400 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-900 w-full">
                     </div>
                     <button type="submit"
-                        class="px-4 py-2 bg-neutral-900 text-white rounded-md hover:bg-neutral-700 whitespace-nowrap">
+                        class=" px-4 py-2 bg-neutral-900 text-white rounded-md hover:bg-neutral-700 whitespace-nowrap">
                         Search
                     </button>
                 </form>
+                <div>
 
-                <!-- sort
-                <button type="button"
-                    class="px-3 py-2 border border-neutral-800 text-neutral-700 rounded-md hover:bg-neutral-200 whitespace-nowrap"><svg
-                        class="h-4 w-4 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M8 7l4-4 4 4M16 17l-4 4-4-4" />
-                    </svg>
-                    Sort
-                </button>
-            -->
+                </div>
+                <form method="GET" action="{{ route('supplier.index') }}" class="relative inline-block">
+                    <select name="sort" onchange="this.form.submit()"
+                        class="border border-neutral-400 rounded-md ml-3 px-3 py-3 focus:ring-2 focus:ring-neutral-900 text-sm bg-white cursor-pointer">
+                        <option value="id_desc" {{ request('sort') == 'id_desc' ? 'selected' : '' }}>Newest → Oldest
+                        </option>
+                        <option value="id_asc" {{ request('sort') == 'id_asc' ? 'selected' : '' }}>Oldest → Newest
+                        </option>
+                        <option value="company_asc" {{ request('sort') == 'company_asc' ? 'selected' : '' }}>Supplier
+                            Name (A–Z)</option>
+                        <option value="company_desc" {{ request('sort') == 'company_desc' ? 'selected' : '' }}>Supplier
+                            Name (Z–A)</option>
+                    </select>
+                </form>
 
             </div>
 
