@@ -26,13 +26,9 @@
                         class=" px-4 py-2 bg-neutral-900 text-white rounded-md hover:bg-neutral-700 whitespace-nowrap">
                         Search
                     </button>
-                </form>
-                <div>
 
-                </div>
-                <form method="GET" action="{{ route('supplier.index') }}" class="relative inline-block">
                     <select name="sort" onchange="this.form.submit()"
-                        class="border border-neutral-400 rounded-md ml-3 px-3 py-3 focus:ring-2 focus:ring-neutral-900 text-sm bg-white cursor-pointer">
+                        class="border border-neutral-400 rounded-md px-3 py-3 focus:ring-2 focus:ring-neutral-900 text-sm bg-white cursor-pointer">
                         <option value="id_desc" {{ request('sort') == 'id_desc' ? 'selected' : '' }}>Newest → Oldest
                         </option>
                         <option value="id_asc" {{ request('sort') == 'id_asc' ? 'selected' : '' }}>Oldest → Newest
@@ -43,7 +39,6 @@
                             Name (Z–A)</option>
                     </select>
                 </form>
-
             </div>
 
             <!-- Right-side buttons -->
