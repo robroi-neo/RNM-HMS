@@ -41,6 +41,7 @@
 <script>
     function showSupplierDetails(row, values) {
         // Populate modal fields
+        console.log(values)
         document.getElementById('modalId').textContent = values.id;
         document.getElementById('modalName').textContent = values.company_name;
         document.getElementById('modalAddress').textContent = values.address;

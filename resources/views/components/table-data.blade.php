@@ -75,21 +75,4 @@
             console.error('Error deleting supplier:', error);
         }
     }
-
-    function editRow(id, supplier) {
-        // Fill modal fields with existing supplier data
-        document.getElementById('edit_id').value = id;
-        document.getElementById('old_name').value = supplier.company_name;
-        document.getElementById('edit_name').value = supplier.company_name;
-        document.getElementById('edit_address').value = supplier.address;
-        document.getElementById('edit_person').value = supplier.contact_person;
-        document.getElementById('edit_number').value = supplier.contact_number;
-
-        toggleEditModal(true);
-    }
-
-    function toggleEditModal(show) {
-        const modal = document.getElementById("editSupplierModal");
-        modal.classList.toggle("hidden", !show);
-    }
 </script>

@@ -4,8 +4,8 @@
     <div onclick="toggleEditModal(false)" class="absolute inset-0 bg-gray-500/75"></div>
 
     <!-- Popup Form -->
-    <form id="editSupplierForm" method="POST" action="{{ route('supplier.edit') }}"
-        class="relative bg-white p-6 rounded-2xl shadow-lg w-112 z-10 space-y-4">
+    <!-- add edit action later -->
+    <form id="editSupplierForm" method="POST" class="relative bg-white p-6 rounded-2xl shadow-lg w-112 z-10 space-y-4">
         @csrf
         @method('PUT')
 
