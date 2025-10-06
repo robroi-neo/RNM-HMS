@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\SupplierController;
-use App\Models\Supplier;
 
 Route::get('/', function () {
     $heading = "Dashboard";

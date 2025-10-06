@@ -1,5 +1,6 @@
 @props([
     'value' => '',
+    'values' => [],
     'type' => 'data',
 ])
 
@@ -10,7 +11,7 @@
 @else
     <td class="flex flex-row px-10 py-4 text-center justify-end space-x-3">
         <!-- Delete icon -->
-        <a class="text-center px-1 py-0.5" onclick="event.stopPropagation(); deleteRow({{ $value }});">
+        <a class="text-center px-1 py-0.5" onclick="event.stopPropagation(); deleteRow({{ $value->id }});">
             <svg class="w-6 h-6
             text-neutral-500 hover:text-neutral-900" viewBox="0 0 25 25" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +31,7 @@
             </svg>
         </a>
         <!-- Edit Icon -->
-        <a class="text-center px-1 py-0.5" onclick="event.stopPropagation();">
+        <a class="text-center px-1 py-0.5" onclick="event.stopPropagation(); editRow({{ $value->id }});">
             <svg class="w-6 h-6 text-neutral-500
             hover:text-neutral-900" viewBox="0 0 25 25" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -73,5 +74,22 @@
         } catch (error) {
             console.error('Error deleting supplier:', error);
         }
+    }
+
+    function editRow(id, supplier) {
+        // Fill modal fields with existing supplier data
+        document.getElementById('edit_id').value = id;
+        document.getElementById('old_name').value = supplier.company_name;
+        document.getElementById('edit_name').value = supplier.company_name;
+        document.getElementById('edit_address').value = supplier.address;
+        document.getElementById('edit_person').value = supplier.contact_person;
+        document.getElementById('edit_number').value = supplier.contact_number;
+
+        toggleEditModal(true);
+    }
+
+    function toggleEditModal(show) {
+        const modal = document.getElementById("editSupplierModal");
+        modal.classList.toggle("hidden", !show);
     }
 </script>

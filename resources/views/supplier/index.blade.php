@@ -44,7 +44,7 @@
             </div>
         </div>
         <div>
-            <x-tables :suppliers=$suppliers></x-tables>
+            <x-tables :values=$suppliers></x-tables>
         </div>
     </div>
 

@@ -1,5 +1,5 @@
 @props([
-    'suppliers' => [],
+    'values' => [],
 ])
 
 <div class="overflow-x-auto rounded-lg shadow">
@@ -14,20 +14,28 @@
         </thead>
 
         <tbody>
-            @if (count($suppliers) === 0)
+
+            @if ($values->isEmpty())
                 <tr>
                     <td colspan="5" class="px-4 py-4 text-center text-gray-700 bg-gray-100 ">
                         No data available in table
                     </td>
                 </tr>
             @endif
-            @foreach ($suppliers as $supplier)
-                <x-table-row :values="$supplier"></x-table-row>
-            @endforeach
+            @foreach ($values as $value)
+                <tr class="hover:bg-gray-50 border-neutral-200 border-b"
+                    onclick='showSupplierDetails(this, @json($value))'>
+                    <x-table-data type="data" :value="$value->id"></x-table-data>
+                    <x-table-data type="data" :value="$value->company_name"></x-table-data>
+                    <x-table-data type="data" :value="$value->address"></x-table-data>
 
+                    <!-- Action buttons -->
+                    <x-table-data type="action_btns" :value="$value"></x-table-data>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
 <div class="mt-3">
-    {{ $suppliers->onEachSide(1)->links() }}
+    {{ $values->onEachSide(1)->links() }}
 </div>
