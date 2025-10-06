@@ -15,7 +15,8 @@
         <!-- Supplier ID (read-only) -->
         <div class="grid grid-cols-2 gap-1 items-center">
             <label class="font-semibold text-gray-700">Supplier ID:</label>
-            <input id="id" name="id" type="text" readonly class="p-2 bg-white text-neutral-700" />
+            <input id="id" name="id" type="text" readonly class="p-2 bg-white text-neutral-700"
+                disabled />
         </div>
 
         <!-- edit Name -->
@@ -44,6 +45,9 @@
             <label class="font-semibold text-gray-700">Contact Number:</label>
             <input id="edit_contact" name="contact_number" type="text"
                 class="border border-neutral-300 rounded-md p-2 focus:ring-2 focus:ring-neutral-500 focus:outline-none" />
+        </div>
+        <div class="flex">
+            <p class="text-neutral-400 italic text-sm"> Please ensure that the item details are correct.</p>
         </div>
 
         <!-- Footer -->
