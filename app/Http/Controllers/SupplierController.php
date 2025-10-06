@@ -52,7 +52,6 @@ class SupplierController extends Controller
             'contact_person' => 'required|string|max:255',
             'contact_number' => 'required|string|max:20',
         ]);
-        // authorize
 
         // update supplier
         $supplier = Supplier::findOrFail($id);

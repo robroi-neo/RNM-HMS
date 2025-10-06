@@ -10,7 +10,8 @@
 
 <script>
     async function deleteRow(id) {
-        if (!confirm('Are you sure you want to delete this supplier?')) return;
+        if (!confirm('Deleting this supplier will permanently remove them from the system. This cannot be undone.'))
+            return;
 
         try {
             const response = await fetch("{{ route('supplier.delete') }}", {
